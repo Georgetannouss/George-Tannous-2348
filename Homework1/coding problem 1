@@ -1,1 +1,17 @@
+import datetime
+# Print the header
+print("Birthday Calculator")
 
+current_month = int(input("Current day\nMonth: "))
+current_day = int(input("Day: "))
+current_year = int(input("Year: "))
+
+birth_month = int(input("Birthday\nMonth: "))
+birth_day = int(input("Day: "))
+birth_year = int(input("Year: "))
+
+current_date = datetime.date(current_year, current_month, current_day)
+birth_date = datetime.date(birth_year, birth_month, birth_day)
+age = current_date.year - birth_date.year - ((current_date.month, current_date.day) < (birth_date.month, birth_date.day))
+
+print("You are {} years old.".format(age))
