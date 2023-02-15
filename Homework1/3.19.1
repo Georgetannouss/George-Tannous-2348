@@ -1,1 +1,19 @@
+import math
 
+height = int(input("Enter wall height (feet):\n"))
+width = int(input("Enter wall width (feet):\n"))
+area = height * width
+paint_needed = area / 350.0
+cans_needed = math.ceil(paint_needed)
+
+print("Wall area:", area, "square feet")
+print("Paint needed: %.2f gallons" % paint_needed)
+print("Cans needed: %d can(s)" % cans_needed)
+
+color = input("\nChoose a color to paint the wall:\n")
+
+color_cost = {"red": 35, "blue": 25, "green": 23}
+
+if color in color_cost:
+    total_cost = cans_needed * color_cost[color]
+    print("Cost of purchasing %s paint: $%d" % (color, total_cost))
