@@ -1,5 +1,6 @@
+# George Tannous 1971969
 import datetime
-# Print the header
+
 print("Birthday Calculator")
 
 current_month = int(input("Current day\nMonth: "))
