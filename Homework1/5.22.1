@@ -1,1 +1,33 @@
+services = {
+    'Oil change': 35,
+    'Tire rotation': 19,
+    'Car wash': 7,
+    'Car wax': 12
+}
 
+print("Davy's auto shop services")
+for service, cost in services.items():
+    print(service, '-- $%d' % cost)
+
+print("\nSelect first service:")
+service1 = input()
+print("Select second service:")
+service2 = input()
+
+total_cost = 0
+invoice = "\nDavy's auto shop invoice\n"
+if service1 != '-':
+    invoice += "\nService 1: %s, $%d" % (service1, services[service1])
+    total_cost += services[service1]
+else:
+    invoice += "\nService 1: No service"
+
+if service2 != '-':
+    invoice += "\nService 2: %s, $%d" % (service2, services[service2])
+    total_cost += services[service2]
+else:
+    invoice += "\nService 2: No service"
+
+invoice += "\n\nTotal: $%d" % total_cost
+
+print(invoice)
