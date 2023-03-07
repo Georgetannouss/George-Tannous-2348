@@ -1,0 +1,23 @@
+# George Tannous 1971969
+# 6.22
+a1 = int(input())
+b1 = int(input())
+c1 = int(input())
+a2 = int(input())
+b2 = int(input())
+c2 = int(input())
+
+
+eq1 = lambda x, y: a1 * x + b1 * y == c1
+eq2 = lambda x, y: a2 * x + b2 * y == c2
+
+
+for x in range(-10, 11):
+    for y in range(-10, 11):
+
+        if eq1(x, y) and eq2(x, y):
+
+            print(x, y)
+            exit()
+
+print("No solution")
