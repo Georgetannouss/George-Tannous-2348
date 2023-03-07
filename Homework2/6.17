@@ -1,0 +1,23 @@
+# George Tannous 1971969
+#6.17
+def strengthen_password(password):
+
+    char_map = {
+        'i': '!',
+        'a': '@',
+        'm': 'M',
+        'B': '8',
+        'o': '.'
+    }
+
+    for c in password:
+        if c in char_map:
+            password = password.replace(c, char_map[c])
+
+    password += "q*s"
+
+    return password
+
+password = input()
+strengthened_password = strengthen_password(password)
+print(strengthened_password)
