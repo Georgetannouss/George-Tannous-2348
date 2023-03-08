@@ -1,0 +1,25 @@
+# George Tannous 1971969
+# 9.10
+import csv
+
+# Prompt user for input file name
+input_file = input()
+
+# Read in file using csv.reader() method
+with open(input_file, 'r') as f:
+    reader = csv.reader(f)
+    words = []
+    for row in reader:
+        words.extend(row)
+
+# Count frequencies of each word
+word_count = {}
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+# Output words and their frequencies without duplicates
+for word, freq in word_count.items():
+    print(word, freq)
