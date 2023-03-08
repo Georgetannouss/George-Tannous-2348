@@ -1,1 +1,24 @@
+# George Tannous 1971969
+# Coding problem 2
+import datetime
 
+now = datetime.datetime.now()
+
+with open('inputDates.txt', 'r') as input_file, open('parsedDates.txt', 'w') as output_file:
+    for line in input_file:
+        date_str = line.strip()
+
+        if date_str == "-1":
+            break
+
+        try:
+            date = datetime.datetime.strptime(date_str, "%B %d, %Y")
+        except ValueError:
+            continue
+
+        if date > now:
+            continue
+
+        date_formatted = date.strftime("%#m/%#d/%Y")
+        print(date_formatted)
+        output_file.write(date_formatted + "\n")
