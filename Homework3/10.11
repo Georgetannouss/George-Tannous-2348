@@ -1,0 +1,28 @@
+# George Tannous 1971969
+# 10.11
+class FoodItem:
+    def __init__(self, name="None", fat=0.0, carbs=0.0, protein=0.0):
+        self.name = name
+        self.fat = fat
+        self.carbs = carbs
+        self.protein = protein
+
+    def get_calories(self, num_servings):
+        calories = ((self.fat * 9) + (self.carbs * 4) + (self.protein * 4)) * num_servings
+        return calories
+
+    def print_info(self):
+        print('Nutritional information per serving of {}:'.format(self.name))
+        print('   Fat: {:.2f} g'.format(self.fat))
+        print('   Carbohydrates: {:.2f} g'.format(self.carbs))
+        print('   Protein: {:.2f} g'.format(self.protein))
+        print('Number of calories for {:.2f} serving(s): {:.2f}'.format(1, self.get_calories(1)))
+
+
+food_item1 = FoodItem()
+food_item2 = FoodItem("M&M's", 10.0, 34.0, 2.0)
+
+food_item1.print_info()
+print()
+
+food_item2.print_info()
