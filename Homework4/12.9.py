@@ -1,5 +1,5 @@
-#George Tannous 1971969
-#12.9
+# George Tannous 1971969
+# 12.9
 
 parts = input().split()
 name = parts[0]
