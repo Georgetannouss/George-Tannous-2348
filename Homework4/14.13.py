@@ -1,5 +1,5 @@
-#George Tannous 1971969
-#14.13
+# George Tannous 1971969
+# 14.13
 
 num_calls = 0
 
@@ -7,18 +7,18 @@ num_calls = 0
 def partition(user_ids, i, k):
     pivot_idx = (i + k) // 2
     pivot = user_ids[pivot_idx]
-    l = i
+    L = i
     h = k
-    while l <= h:
-        while user_ids[l] < pivot:
-            l += 1
+    while L <= h:
+        while user_ids[L] < pivot:
+            L += 1
         while user_ids[h] > pivot:
             h -= 1
-        if l <= h:
-            user_ids[l], user_ids[h] = user_ids[h], user_ids[l]
-            l += 1
+        if L <= h:
+            user_ids[L], user_ids[h] = user_ids[h], user_ids[L]
+            L += 1
             h -= 1
-    return l
+    return L
 
 
 def quicksort(user_ids, i, k):
